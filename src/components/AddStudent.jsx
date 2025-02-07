@@ -2,13 +2,13 @@ import { useState } from "react";
 
 function AddStudent({ handleAddStudent}) {
     const [state, setState] = useState({
-        studentName: '',
-        studentImage: '',
-        studentPhone: '',
-        studentEmail: '',
-        studentProgram: '',
-        studentGraduationYear: 0,
-        studentGraduated: false,
+        fullName: '',
+        image: '',
+     phone: '',
+        email: '',
+        program: '',
+        graduationYear: 0,
+        graduated: false,
       })
       const handleChange = (e) => {
         const { name, value, type, checked} = e.target;
@@ -21,24 +21,24 @@ function AddStudent({ handleAddStudent}) {
     const handleFormSubmit = (e) => {
         e.preventDefault();
         const newStudent = {
-          fullName: state.studentName,
-          image: state.studentImage,
-          phone: state.studentPhone,
-          email: state.studentEmail,
-          program: state.studentProgram,
-          graduationYear: state.studentGraduationYear,
-          graduated: state.studentGraduated,
+          fullName: state.fullName,
+          image: state.image,
+          phone: state.phone,
+          email: state.email,
+          program: state.program,
+          graduationYear: state.graduationYear,
+          graduated: state.graduated,
         };
         handleAddStudent(newStudent);
 
           setState({
-      studentName: '',
-      studentImage: '',
-      studentPhone: '',
-      studentEmail: '',
-      studentProgram: '',
-      studentGraduationYear: 0,
-      studentGraduated: false,
+      fullName: '',
+      image: '',
+      phone: '',
+      email: '',
+      program: '',
+      graduationYear: 0,
+      graduated: false,
     });
   };
         
@@ -53,7 +53,7 @@ function AddStudent({ handleAddStudent}) {
                 name="fullName"
                 type="text"
                 placeholder="Full Name"
-                value={state.studentName}
+                value={state.fullName}
                 onChange={handleChange}
               />
             </label>
@@ -64,7 +64,7 @@ function AddStudent({ handleAddStudent}) {
                 name="image"
                 type="url"
                 placeholder="Profile Image"
-                value={state.studentImage}
+                value={state.image}
                 onChange={handleChange}
               />
             </label>
@@ -75,7 +75,7 @@ function AddStudent({ handleAddStudent}) {
                 name="phone"
                 type="tel"
                 placeholder="Phone"
-                value={state.studentPhone}
+                value={state.phone}
                 onChange={handleChange}
               />
             </label>
@@ -86,7 +86,7 @@ function AddStudent({ handleAddStudent}) {
                 name="email"
                 type="email"
                 placeholder="Email"
-                value={state.studentEmail}
+                value={state.email}
                 onChange={handleChange}
               />
             </label>
@@ -97,7 +97,7 @@ function AddStudent({ handleAddStudent}) {
               Program
               <select
                 name="program"
-                value={state.studentProgram}
+                value={state.program}
                 onChange={handleChange}
               >
                 <option value="">-- None --</option>
@@ -117,7 +117,7 @@ function AddStudent({ handleAddStudent}) {
                 maxLength={4}
                 min={2023}
                 max={2030}
-                value={state.studentGraduationYear}
+                value={state.graduationYear}
                 onChange={handleChange}
               />
             </label>
@@ -127,7 +127,7 @@ function AddStudent({ handleAddStudent}) {
               <input
                 name="graduated"
                 type="checkbox"
-                checked={state.studentGraduated}
+                checked={state.graduated}
                 onChange={handleChange}
               />
             </label>
